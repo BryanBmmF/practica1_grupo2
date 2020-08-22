@@ -18,7 +18,7 @@ public class Funciones {
             switch (opcion){
 
                 case 1:
-
+			discriminante();
                 break;
 
                 default :
