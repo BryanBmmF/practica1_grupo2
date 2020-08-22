@@ -31,4 +31,22 @@ public class Funciones {
 
     }
 
+    /* funcion para validar un numero primo */
+    public void calcularPrimo(int numero){
+        int contador = 2;
+        boolean primo=true;
+        while ((primo) && (contador!=numero)){
+            if (numero % contador == 0)
+                primo = false;
+                contador++;
+        }
+        
+        if(primo){
+            system.out.println("El numero "+numero+" es primo");
+        } else {
+            system.out.println("El numero "+numero+" no es primo");
+        }
+       
+    }
+
 }
