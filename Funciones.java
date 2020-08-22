@@ -31,8 +31,9 @@ public class Funciones {
 
     }
 
+
     /* funcion para validar un numero primo */
-    public void calcularPrimo(int numero){
+    public static void calcularPrimo(int numero){
         int contador = 2;
         boolean primo=true;
         while ((primo) && (contador!=numero)){
@@ -47,6 +48,11 @@ public class Funciones {
             system.out.println("El numero "+numero+" no es primo");
         }
        
+    /*funcion que calcula la potencia al cubo de un numero*/
+    public static void realizarPotenciaAlCubo(double base){
+        double resultado = (double) Math.pow(base, 3);
+        System.out.println(base + " elevado a al cubo es igual a " + resultado);
+
     }
 
 }
