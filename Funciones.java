@@ -31,4 +31,9 @@ public class Funciones {
 
     }
 
+    public static void realizarPotenciaAlCubo(double base){
+        double resultado = (double) Math.pow(base, 3);
+        System.out.println(base + " elevado a al cubo es igual a " + resultado);
+    }
+
 }
