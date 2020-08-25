@@ -1,6 +1,10 @@
+import static java.lang.Math.pow;
+import static java.lang.Math.sqrt;
+import java.util.Scanner;
+
 public class Funciones {
 
-    public static void main(String args[], int argv) {
+    public static void main(String[] args) {
 
         Scanner sn = new Scanner(System.in);
         boolean salir = false;
@@ -8,7 +12,7 @@ public class Funciones {
         
         while(!salir){
             System.out.println("1. Opcion 1");
-            System.out.println("2. Opcion 2");
+            System.out.println("2. Discriminante");
             System.out.println("3. Opcion 3");
             System.out.println("4. Salir");
             
@@ -18,12 +22,15 @@ public class Funciones {
             switch (opcion){
 
                 case 1:
-			discriminante();
+
+                break;
+                case 2:
+			calculoDiscriminante();
                 break;
 
-                default :
-                    
-
+                default : 
+                
+                break;
             }
             
         }
@@ -32,16 +39,21 @@ public class Funciones {
     }
     
     
-    public void discriminante(){
-        double a, b, c;
-        System.out.printf("Ingrese coeficientes a, b y c de la ecuación: ");
+    
+    public static void calculoDiscriminante(){
+        double a,b,c;
+	System.out.printf("Ingrese coeficientes a, b y c de la ecuación: ");
         Scanner reader = new Scanner(System.in);
         a = reader.nextDouble();
         b = reader.nextDouble();
-        c = reader.nextDouble();
-        double discriminante = -20000000;
-	discriminante = pow(b, 2) - 4 * a * c;
-        System.out.println("\nEsta es la discriminante:"+discriminante);
+        c = reader.nextDouble();        
+        discriminante(a,b,c);
+    }
+    
+    
+    public static void discriminante(double a, double b, double c){        
+	double discriminante = pow(b, 2) - 4 * a * c;
+        System.out.println("\nLa discriminante es:"+discriminante);
     }
     
 
