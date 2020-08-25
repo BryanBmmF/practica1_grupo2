@@ -13,7 +13,7 @@ public class Funciones {
         while(!salir){
             System.out.println("1. Opcion 1");
             System.out.println("2. Discriminante");
-            System.out.println("3. Opcion 3");
+            System.out.println("3. Numero Absoluto");
             System.out.println("4. Salir");
             
             System.out.println("Escribe una de las opciones");
@@ -25,7 +25,10 @@ public class Funciones {
 
                 break;
                 case 2:
-			calculoDiscriminante();
+			        calculoDiscriminante();
+                break;
+                case 3:
+			        calculoValorAbsoluto();
                 break;
 
                 default : 
@@ -74,6 +77,20 @@ public class Funciones {
             System.out.println("El numero "+numero+" no es primo");
         }
        
+    }
+
+    /* Métodos para calcular un numero absoluto */
+    public static void calculoValorAbsoluto(){
+    	double a;
+        System.out.printf("Ingrese el valor al cual hacerle valor absoluto: \n");
+        Scanner reader = new Scanner(System.in);
+        a = reader.nextDouble();
+	valorAbsoluto(a);
+    }
+    
+    public static void valorAbsoluto(double a){
+	double resultado = Math.abs(a);
+        System.out.println("El resultado es: "+resultado+"\n\n");
     }
 
 }
