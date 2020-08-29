@@ -5,110 +5,151 @@ import java.util.Scanner;
 
 public class Funciones {
 
-    public static void main(String[] args) {
+  static Scanner reader = new Scanner(System.in);
 
-        Scanner sn = new Scanner(System.in);
-        boolean salir = false;
-        int opcion; //Guardaremos la opcion del usuario
+  public static void main(String[] args) {
 
-        while(!salir){
-            System.out.println("1. Opcion 1");
-            System.out.println("2. Discriminante");
-            System.out.println("3. Numero Absoluto");
-            System.out.println("4. Salir");
+    boolean salir = false;
+    int opcion; //Guardaremos la opcion del usuario
 
-            System.out.println("Escribe una de las opciones");
-            opcion = sn.nextInt();
+    while(!salir){
+      System.out.println("1. Calcular numero primo");
+      System.out.println("2. Discriminante");
+      System.out.println("3. Número Absoluto");
+      System.out.println("4. Potencia al cubo");
+      System.out.println("5. Raíz cúbica");
+      System.out.println("6. Multiplicaión");
+      System.out.println("7. División");
+      System.out.println("8. Salir");
 
-            switch (opcion){
+      System.out.println("Escribe una de las opciones");
+      opcion = reader.nextInt();
 
-                case 1:
+      switch (opcion){
 
-                break;
-                case 2:
-			        calculoDiscriminante();
-                break;
-                case 3:
-			        calculoValorAbsoluto();
-                break;
-
-                default :
-
-
-            }
-
-        }
-
-
-    }
-
-
-
-
-    public static void calculoDiscriminante(){
-        double a,b,c;
-	System.out.printf("Ingrese coeficientes a, b y c de la ecuación: ");
-        Scanner reader = new Scanner(System.in);
-        a = reader.nextDouble();
-        b = reader.nextDouble();
-        c = reader.nextDouble();
-        discriminante(a,b,c);
-    }
-
-
-    public static void discriminante(double a, double b, double c){
-	double discriminante = pow(b, 2) - 4 * a * c;
-        System.out.println("\nLa discriminante es:"+discriminante);
-    }
-
-
-    /* funcion para validar un numero primo */
-    public static void calcularPrimo(int numero){
-        int contador = 2;
-        boolean primo=true;
-        while ((primo) && (contador!=numero)){
-            if (numero % contador == 0)
-                primo = false;
-                contador++;
-        }
-
-        if(primo){
-            System.out.println("El numero "+numero+" es primo");
-        } else {
-            System.out.println("El numero "+numero+" no es primo");
-        }
-
-    /*funcion que calcula la potencia al cubo de un numero*/
-    public static void realizarPotenciaAlCubo(double base){
-        double resultado = (double) Math.pow(base, 3);
-        System.out.println(base + " elevado a al cubo es igual a " + resultado);
+        case 1:
+        calcularPrimo();
+        break;
+        case 2:
+        calculoDiscriminante();
+        break;
+        case 3:
+        calculoValorAbsoluto();
+        break;
+        case 4:
+        realizarPotenciaAlCubo();
+        break;
+        case 5:
+        calcularRaizCubica();
+        break;
+        case 6:
+        calcularMultiplicacion();
+        break;
+        case 7:
+        calcularDivision();
+        break;
+        case 8:
+            System.out.println("---- ¡Adios! ----");
+            System.exit(0);
+        break;
+        default :
+            System.out.println("---- Por favor ingrese una opcion valida. ----");
+      }
 
     }
+  }
+
+  public static void calculoDiscriminante(){
+    double a,b,c;
+    System.out.printf("Ingrese coeficientes a, b y c de la ecuación: ");
+    a = reader.nextDouble();
+    b = reader.nextDouble();
+    c = reader.nextDouble();
+    discriminante(a,b,c);
+  }
 
 
+  public static void discriminante(double a, double b, double c){
+    double discriminante = pow(b, 2) - 4 * a * c;
+    System.out.println("\nLa discriminante es:"+discriminante);
+  }
+
+
+  /* funcion para validar un numero primo */
+  public static void calcularPrimo(){
+    System.out.printf("Ingrese un numero entero para saber si es primo: ");
+    int numero = reader.nextInt();
+    int contador = 2;
+    boolean primo=true;
+    while ((primo) && (contador!=numero)){
+      if (numero % contador == 0)
+      primo = false;
+      contador++;
     }
-}
 
-    /* Funcion para calcular la raiz cubica */
-    public static void calcularRaizCubica(double valor){
-      double  resultado;
-       Scanner sc=new Scanner(System.in);
-       resultado=Math.pow(valor,1.0/3.0);
-       System.out.println("Su raiz cubica es:"+resultado);
-     }
-
-    /* Métodos para calcular un numero absoluto */
-    public static void calculoValorAbsoluto(){
-    	double a;
-        System.out.printf("Ingrese el valor al cual hacerle valor absoluto: \n");
-        Scanner reader = new Scanner(System.in);
-        a = reader.nextDouble();
-	valorAbsoluto(a);
+    if(primo){
+      System.out.println("El numero "+numero+" es primo");
+    } else {
+      System.out.println("El numero "+numero+" no es primo");
     }
+  }
 
-    public static void valorAbsoluto(double a){
-	double resultado = Math.abs(a);
-        System.out.println("El resultado es: "+resultado+"\n\n");
+  /*funcion que calcula la potencia al cubo de un numero*/
+  public static void realizarPotenciaAlCubo(){
+    System.out.printf("Ingrese un numero base para elevar al cubo: ");
+    double base = reader.nextDouble();
+    double resultado = (double) Math.pow(base, 3);
+    System.out.println(base + " elevado a al cubo es igual a " + resultado);
+  }
+
+
+
+  /* Funcion para calcular la raiz cubica */
+  public static void calcularRaizCubica(){
+    System.out.printf("Ingrese un numero para calcular su raiz cubica: ");
+    double valor = reader.nextDouble();
+    double  resultado;
+    Scanner sc=new Scanner(System.in);
+    resultado=Math.pow(valor,1.0/3.0);
+    System.out.println("Su raiz cubica es:"+resultado);
+  }
+
+  /* Métodos para calcular un numero absoluto */
+  public static void calculoValorAbsoluto(){
+    double a;
+    System.out.printf("Ingrese el valor al cual hacerle valor absoluto: \n");
+    a = reader.nextDouble();
+    valorAbsoluto(a);
+  }
+
+  /* Funcion para calcular el valor absoluto */
+  public static void valorAbsoluto(double a){
+    double resultado = Math.abs(a);
+    System.out.println("El resultado es: "+resultado+"\n\n");
+  }
+
+  /* Funcion para calcular una multiplicaion */
+  public static void calcularMultiplicacion(){
+    System.out.printf("Ingrese el primer numero: ");
+    double num1 = reader.nextDouble();
+    System.out.printf("Ingrese el segundo numero: ");
+    double num2 = reader.nextDouble();
+    double resultado = num1*num2;
+    System.out.println("El resultado de la multiplicación es: "+resultado+"\n");
+  }
+
+  /* Funcion para calcular una divisio */
+  public static void calcularDivision(){
+    System.out.printf("Ingrese el dividendo: ");
+    double num1 = reader.nextDouble();
+    System.out.printf("Ingrese el divisor: ");
+    double num2 = reader.nextDouble();
+    if (num2 == 0) {
+      System.out.println("No puedes dividir dentro de cero.\n");
+    } else{
+      double resultado = num1/num2;
+      System.out.println("El resultado de la division es: "+resultado+"\n");
     }
+  }
 
 }
