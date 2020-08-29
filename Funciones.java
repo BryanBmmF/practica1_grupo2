@@ -21,7 +21,7 @@ public class Funciones {
       System.out.println("5. Raíz cúbica");
       System.out.println("6. Multiplicaión");
       System.out.println("7. División");
-      System.out.println("8. División");
+      System.out.println("8. Seno");
       System.out.println("9. Coseno");
       System.out.println("10. Calcular suma");
       System.out.println("11. Salir");
