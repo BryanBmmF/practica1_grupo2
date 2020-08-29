@@ -152,4 +152,18 @@ public class Funciones {
     }
   }
 
+   /* Función para calcular un módulo*/ 
+    public static void calcularModulo(){
+        System.out.printf("Ingrese el dividendo: ");
+        double num1 = reader.nextDouble();
+        System.out.printf("Ingrese el divisor: ");
+        double num2 = reader.nextDouble();
+        if (num2 == 0) {
+            System.out.println("El divisor no puede ser 0.\n");
+        } else{
+            double resultado = num1%num2;
+            System.out.println("El Módulo de la división es: "+resultado+"\n");
+        }
+    }
+
 }
