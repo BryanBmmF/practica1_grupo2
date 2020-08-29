@@ -22,7 +22,8 @@ public class Funciones {
       System.out.println("6. Multiplicaión");
       System.out.println("7. División");
       System.out.println("8. División");
-      System.out.println("9. Salir");
+      System.out.println("9. Coseno");
+      System.out.println("10. Salir");
 
       System.out.println("Escribe una de las opciones");
       opcion = reader.nextInt();
@@ -51,9 +52,12 @@ public class Funciones {
         calcularDivision();
         break;
         case 8:
-	calcularSeno()
+	    calcularSeno();
         break;
         case 9:
+	    calcularCoseno();
+        break;
+        case 10:
             System.out.println("---- ¡Adios! ----");
             System.exit(0);
         break;
