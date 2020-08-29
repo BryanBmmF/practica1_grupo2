@@ -157,7 +157,22 @@ public class Funciones {
     }
   }
 
-  public static void calcularSeno() {
+    /* Función para calcular un módulo*/ 
+    public static void calcularModulo(){
+        System.out.printf("Ingrese el dividendo: ");
+        double num1 = reader.nextDouble();
+        System.out.printf("Ingrese el divisor: ");
+        double num2 = reader.nextDouble();
+        if (num2 == 0) {
+            System.out.println("El divisor no puede ser 0.\n");
+        } else{
+            double resultado = num1%num2;
+            System.out.println("El Módulo de la división es: "+resultado+"\n");
+        }
+    }
+
+
+    public static void calcularSeno() {
         Scanner num = new Scanner(System.in);
         try {
             System.out.print("Introduce un ángulo en grados sexagesimales: ");
@@ -175,7 +190,7 @@ public class Funciones {
     }
 
 
-  /* Funcion para calcular una suma de una cantidad de numeros seleccionada por el usuario */
+    /* Funcion para calcular una suma de una cantidad de numeros seleccionada por el usuario */
     public static void calcularSuma() {
         int cantidadDatos;
         double resultado = 0;
@@ -194,21 +209,21 @@ public class Funciones {
     }
 
 
-  /**Funcion Coseno*/
-  public static void calcularCoseno() {
-    try {
-        System.out.print("Introduce un ángulo en grados sexagesimales: ");
-        double dato = reader.nextDouble();
-        double resultado = funcionCoseno(dato);
-        System.out.println("El resultado de la funcion coseno es: " + resultado);
-    } catch (Exception e) {
-        System.out.println("ERROR: Datos incorrectos.");
+    /**Funcion Coseno*/
+    public static void calcularCoseno() {
+        try {
+            System.out.print("Introduce un ángulo en grados sexagesimales: ");
+            double dato = reader.nextDouble();
+            double resultado = funcionCoseno(dato);
+            System.out.println("El resultado de la funcion coseno es: " + resultado);
+        } catch (Exception e) {
+            System.out.println("ERROR: Datos incorrectos.");
+        }
     }
-}
 
-public static double funcionCoseno(double valor) {
-    double res = Math.toRadians(valor);
-    return Math.cos(res);
-}
+    public static double funcionCoseno(double valor) {
+        double res = Math.toRadians(valor);
+        return Math.cos(res);
+    }
 
 }
