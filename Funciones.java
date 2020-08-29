@@ -24,7 +24,8 @@ public class Funciones {
       System.out.println("8. Seno");
       System.out.println("9. Coseno");
       System.out.println("10. Calcular suma");
-      System.out.println("11. Salir");
+      System.out.println("11. Calcular Módulo");
+      System.out.println("12. Salir");
 
       System.out.println("Escribe una de las opciones");
       opcion = reader.nextInt();
@@ -62,6 +63,9 @@ public class Funciones {
         calcularSuma();
         break;
         case 11:
+        calcularModulo();
+        break;
+        case 12:
         System.out.println("---- ¡Adios! ----");
         System.exit(0);
         break;
