@@ -20,7 +20,8 @@ public class Funciones {
       System.out.println("5. Raíz cúbica");
       System.out.println("6. Multiplicaión");
       System.out.println("7. División");
-      System.out.println("8. Salir");
+      System.out.println("8. División");
+      System.out.println("9. Salir");
 
       System.out.println("Escribe una de las opciones");
       opcion = reader.nextInt();
@@ -49,6 +50,9 @@ public class Funciones {
         calcularDivision();
         break;
         case 8:
+	calcularSeno()
+        break;
+        case 9:
             System.out.println("---- ¡Adios! ----");
             System.exit(0);
         break;
@@ -138,7 +142,7 @@ public class Funciones {
     System.out.println("El resultado de la multiplicación es: "+resultado+"\n");
   }
 
-  /* Funcion para calcular una divisio */
+  /* Funcion para calcular una division */
   public static void calcularDivision(){
     System.out.printf("Ingrese el dividendo: ");
     double num1 = reader.nextDouble();
@@ -151,5 +155,22 @@ public class Funciones {
       System.out.println("El resultado de la division es: "+resultado+"\n");
     }
   }
+  
+  public static void calcularSeno() {
+        Scanner num = new Scanner(System.in);
+        try {
+            System.out.print("Introduce un ángulo en grados sexagesimales: ");
+            double dato = num.nextDouble();
+            double resultado = funcionSeno(dato);
+            System.out.println("El resultado de la funcion seno es: " + resultado);
+        } catch (Exception e) {
+            System.out.println("ERROR: Datos incorrectos.");
+        }
+    }
+
+    public static double funcionSeno(double valor) {
+        double res = Math.toRadians(valor);
+        return Math.sin(res);
+    }
 
 }
