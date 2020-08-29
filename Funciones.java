@@ -2,6 +2,7 @@ import java.util.*;
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Funciones {
 
@@ -151,5 +152,23 @@ public class Funciones {
       System.out.println("El resultado de la division es: "+resultado+"\n");
     }
   }
+
+  /* Funcion para calcular una suma de una cantidad de numeros seleccionada por el usuario */
+    public static void calcularSuma() {
+        int cantidadDatos;
+        double resultado = 0;
+        ArrayList<Double> listaDatos = new ArrayList<>();
+        System.out.printf("Ingrese cuantos numeros quiere sumar: ");
+        cantidadDatos = reader.nextInt();
+        for (int i = 0; i < cantidadDatos; i++) {
+            System.out.println("Ingrese un numero: ");
+            double valor = reader.nextDouble();
+            listaDatos.add(valor);
+        }
+        for (int i = 0; i < listaDatos.size(); i++) {
+            resultado += listaDatos.get(i);
+        }
+        System.out.println("El resultado de la suma es: " + resultado);
+    }
 
 }
