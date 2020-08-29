@@ -145,7 +145,7 @@ public class Funciones {
     System.out.printf("Ingrese el divisor: ");
     double num2 = reader.nextDouble();
     if (num2 == 0) {
-      System.out.println("No puedes dividir dentro de cero.\n");
+      System.out.println("El divisor no puede ser 0.\n");
     } else{
       double resultado = num1/num2;
       System.out.println("El resultado de la division es: "+resultado+"\n");
