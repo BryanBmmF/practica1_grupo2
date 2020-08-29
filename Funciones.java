@@ -1,3 +1,4 @@
+import java.util.*;
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 import java.util.Scanner;
@@ -9,13 +10,13 @@ public class Funciones {
         Scanner sn = new Scanner(System.in);
         boolean salir = false;
         int opcion; //Guardaremos la opcion del usuario
-        
+
         while(!salir){
             System.out.println("1. Opcion 1");
             System.out.println("2. Discriminante");
             System.out.println("3. Numero Absoluto");
             System.out.println("4. Salir");
-            
+
             System.out.println("Escribe una de las opciones");
             opcion = sn.nextInt();
 
@@ -31,35 +32,34 @@ public class Funciones {
 			        calculoValorAbsoluto();
                 break;
 
-                default : 
-                
-                break;
+                default :
+
+
             }
-            
+
         }
 
 
     }
-    
-    
-    
+
+
+
+
     public static void calculoDiscriminante(){
         double a,b,c;
 	System.out.printf("Ingrese coeficientes a, b y c de la ecuación: ");
         Scanner reader = new Scanner(System.in);
         a = reader.nextDouble();
         b = reader.nextDouble();
-        c = reader.nextDouble();        
+        c = reader.nextDouble();
         discriminante(a,b,c);
     }
-    
-    
-    public static void discriminante(double a, double b, double c){        
+
+
+    public static void discriminante(double a, double b, double c){
 	double discriminante = pow(b, 2) - 4 * a * c;
         System.out.println("\nLa discriminante es:"+discriminante);
     }
-    
-
 
 
     /* funcion para validar un numero primo */
@@ -71,19 +71,31 @@ public class Funciones {
                 primo = false;
                 contador++;
         }
-        
+
         if(primo){
             System.out.println("El numero "+numero+" es primo");
         } else {
             System.out.println("El numero "+numero+" no es primo");
         }
-       
+
     /*funcion que calcula la potencia al cubo de un numero*/
     public static void realizarPotenciaAlCubo(double base){
         double resultado = (double) Math.pow(base, 3);
         System.out.println(base + " elevado a al cubo es igual a " + resultado);
 
     }
+
+
+    }
+}
+
+    /* Funcion para calcular la raiz cubica */
+    public static void calcularRaizCubica(double valor){
+      double  resultado;
+       Scanner sc=new Scanner(System.in);
+       resultado=Math.pow(valor,1.0/3.0);
+       System.out.println("Su raiz cubica es:"+resultado);
+     }
 
     /* Métodos para calcular un numero absoluto */
     public static void calculoValorAbsoluto(){
@@ -93,7 +105,7 @@ public class Funciones {
         a = reader.nextDouble();
 	valorAbsoluto(a);
     }
-    
+
     public static void valorAbsoluto(double a){
 	double resultado = Math.abs(a);
         System.out.println("El resultado es: "+resultado+"\n\n");
