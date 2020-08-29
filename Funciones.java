@@ -23,7 +23,8 @@ public class Funciones {
       System.out.println("7. División");
       System.out.println("8. División");
       System.out.println("9. Coseno");
-      System.out.println("10. Salir");
+      System.out.println("10. Calcular suma");
+      System.out.println("11. Salir");
 
       System.out.println("Escribe una de las opciones");
       opcion = reader.nextInt();
@@ -52,17 +53,20 @@ public class Funciones {
         calcularDivision();
         break;
         case 8:
-	    calcularSeno();
+        calcularSeno();
         break;
         case 9:
-	    calcularCoseno();
+        calcularCoseno();
         break;
         case 10:
-            System.out.println("---- ¡Adios! ----");
-            System.exit(0);
+        calcularSuma();
+        break;
+        case 11:
+        System.out.println("---- ¡Adios! ----");
+        System.exit(0);
         break;
         default :
-            System.out.println("---- Por favor ingrese una opcion valida. ----");
+        System.out.println("---- Por favor ingrese una opcion valida. ----");
       }
 
     }
@@ -161,73 +165,73 @@ public class Funciones {
     }
   }
 
-    /* Función para calcular un módulo*/ 
-    public static void calcularModulo(){
-        System.out.printf("Ingrese el dividendo: ");
-        double num1 = reader.nextDouble();
-        System.out.printf("Ingrese el divisor: ");
-        double num2 = reader.nextDouble();
-        if (num2 == 0) {
-            System.out.println("El divisor no puede ser 0.\n");
-        } else{
-            double resultado = num1%num2;
-            System.out.println("El Módulo de la división es: "+resultado+"\n");
-        }
+  /* Función para calcular un módulo*/
+  public static void calcularModulo(){
+    System.out.printf("Ingrese el dividendo: ");
+    double num1 = reader.nextDouble();
+    System.out.printf("Ingrese el divisor: ");
+    double num2 = reader.nextDouble();
+    if (num2 == 0) {
+      System.out.println("El divisor no puede ser 0.\n");
+    } else{
+      double resultado = num1%num2;
+      System.out.println("El Módulo de la división es: "+resultado+"\n");
     }
+  }
 
 
-    public static void calcularSeno() {
-        Scanner num = new Scanner(System.in);
-        try {
-            System.out.print("Introduce un ángulo en grados sexagesimales: ");
-            double dato = num.nextDouble();
-            double resultado = funcionSeno(dato);
-            System.out.println("El resultado de la funcion seno es: " + resultado);
-        } catch (Exception e) {
-            System.out.println("ERROR: Datos incorrectos.");
-        }
+  public static void calcularSeno() {
+    Scanner num = new Scanner(System.in);
+    try {
+      System.out.print("Introduce un ángulo en grados sexagesimales: ");
+      double dato = num.nextDouble();
+      double resultado = funcionSeno(dato);
+      System.out.println("El resultado de la funcion seno es: " + resultado);
+    } catch (Exception e) {
+      System.out.println("ERROR: Datos incorrectos.");
     }
+  }
 
-    public static double funcionSeno(double valor) {
-        double res = Math.toRadians(valor);
-        return Math.sin(res);
+  public static double funcionSeno(double valor) {
+    double res = Math.toRadians(valor);
+    return Math.sin(res);
+  }
+
+
+  /* Funcion para calcular una suma de una cantidad de numeros seleccionada por el usuario */
+  public static void calcularSuma() {
+    int cantidadDatos;
+    double resultado = 0;
+    ArrayList<Double> listaDatos = new ArrayList<>();
+    System.out.printf("Ingrese cuantos numeros quiere sumar: ");
+    cantidadDatos = reader.nextInt();
+    for (int i = 0; i < cantidadDatos; i++) {
+      System.out.println("Ingrese un numero: ");
+      double valor = reader.nextDouble();
+      listaDatos.add(valor);
     }
-
-
-    /* Funcion para calcular una suma de una cantidad de numeros seleccionada por el usuario */
-    public static void calcularSuma() {
-        int cantidadDatos;
-        double resultado = 0;
-        ArrayList<Double> listaDatos = new ArrayList<>();
-        System.out.printf("Ingrese cuantos numeros quiere sumar: ");
-        cantidadDatos = reader.nextInt();
-        for (int i = 0; i < cantidadDatos; i++) {
-            System.out.println("Ingrese un numero: ");
-            double valor = reader.nextDouble();
-            listaDatos.add(valor);
-        }
-        for (int i = 0; i < listaDatos.size(); i++) {
-            resultado += listaDatos.get(i);
-        }
-        System.out.println("El resultado de la suma es: " + resultado);
+    for (int i = 0; i < listaDatos.size(); i++) {
+      resultado += listaDatos.get(i);
     }
+    System.out.println("El resultado de la suma es: " + resultado);
+  }
 
 
-    /**Funcion Coseno*/
-    public static void calcularCoseno() {
-        try {
-            System.out.print("Introduce un ángulo en grados sexagesimales: ");
-            double dato = reader.nextDouble();
-            double resultado = funcionCoseno(dato);
-            System.out.println("El resultado de la funcion coseno es: " + resultado);
-        } catch (Exception e) {
-            System.out.println("ERROR: Datos incorrectos.");
-        }
+  /**Funcion Coseno*/
+  public static void calcularCoseno() {
+    try {
+      System.out.print("Introduce un ángulo en grados sexagesimales: ");
+      double dato = reader.nextDouble();
+      double resultado = funcionCoseno(dato);
+      System.out.println("El resultado de la funcion coseno es: " + resultado);
+    } catch (Exception e) {
+      System.out.println("ERROR: Datos incorrectos.");
     }
+  }
 
-    public static double funcionCoseno(double valor) {
-        double res = Math.toRadians(valor);
-        return Math.cos(res);
-    }
+  public static double funcionCoseno(double valor) {
+    double res = Math.toRadians(valor);
+    return Math.cos(res);
+  }
 
 }
